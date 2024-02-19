@@ -1,0 +1,11 @@
+C:\Users\Support\source\repos\Game\Game\bin\Debug\Game.exe.config
+C:\Users\Support\source\repos\Game\Game\bin\Debug\Game.exe
+C:\Users\Support\source\repos\Game\Game\bin\Debug\Game.pdb
+C:\Users\Support\source\repos\Game\Game\obj\Debug\Game.csproj.AssemblyReference.cache
+C:\Users\Support\source\repos\Game\Game\obj\Debug\Game.Properties.Resources.resources
+C:\Users\Support\source\repos\Game\Game\obj\Debug\Game.csproj.GenerateResource.cache
+C:\Users\Support\source\repos\Game\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+C:\Users\Support\source\repos\Game\Game\obj\Debug\Game.exe
+C:\Users\Support\source\repos\Game\Game\obj\Debug\Game.pdb
+C:\Users\Support\source\repos\Game\Game\obj\Debug\Myspace.Menu.resources
+C:\Users\Support\source\repos\Game\Game\obj\Debug\Game.Battle.resources
