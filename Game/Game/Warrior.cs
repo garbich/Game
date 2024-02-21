@@ -18,8 +18,6 @@ namespace Myspace
 
             if (CriticalChance() > 80)
             {
-                Console.WriteLine("Warrior shield 100%");
-                Console.WriteLine("Attack on warrior end");
                 return 0;
             }
 
@@ -30,8 +28,7 @@ namespace Myspace
 
                 totallDamage -= ResistanceToPhysical;
                 if (CriticalChance() > 50)
-                {
-                    Console.WriteLine("Enemy hit with critical damage");
+                {               
                     totallDamage *= 1.5;
                 }
             }
@@ -41,11 +38,11 @@ namespace Myspace
                 totallDamage -= ResistanceToMagical;
                 if (CriticalChance() > 50)
                 {
-                    Console.WriteLine("Enemy hit with critical damage");
+                    
                     totallDamage *= 1.5;
                 }
             }
-            Console.WriteLine("Attack on warrior end");
+            
 
             return totallDamage;
         }

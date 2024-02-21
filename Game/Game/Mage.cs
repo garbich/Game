@@ -19,8 +19,7 @@ namespace Myspace
 
             if (CriticalChance() > 80)
             {
-                Console.WriteLine("Mage shield 100%");
-                Console.WriteLine("Attack on mage end");
+                
                 return 0;
             }
 
@@ -34,7 +33,7 @@ namespace Myspace
                 totallDamage -= ResistanceToPhysical;
                 if (CriticalChance() > 50)
                 {
-                    Console.WriteLine("Enemy hit with critical damage");
+                   
                     totallDamage *= 1.5;
                 }
             }
@@ -44,12 +43,12 @@ namespace Myspace
                 totallDamage -= ResistanceToMagical;
                 if (CriticalChance() > 50)
                 {
-                    Console.WriteLine("Enemy hit with critical damage");
+                   
                     totallDamage *= 1.5;
                 }
             }
 
-            Console.WriteLine("Attack on mage end");
+            
             return totallDamage;
         }
         public int CriticalChance()

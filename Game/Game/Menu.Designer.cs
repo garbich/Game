@@ -70,7 +70,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(312, 252);
+            this.button1.Location = new System.Drawing.Point(571, 261);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(108, 44);
             this.button1.TabIndex = 0;
@@ -82,41 +82,41 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(354, 138);
+            this.label3.Location = new System.Drawing.Point(410, 138);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(289, 13);
+            this.label3.Size = new System.Drawing.Size(233, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Choose location(1 - field, 2 - city, 3 - mountain, 4 - random) - ";
+            this.label3.Text = "Choose location(1 - field, 2 - city, 3 - mountain) - ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label4.Location = new System.Drawing.Point(364, 164);
+            this.label4.Location = new System.Drawing.Point(420, 164);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(279, 13);
+            this.label4.Size = new System.Drawing.Size(223, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Choose weather(1 - rain, 2 - storm, 3 - snow, 4 - random) - ";
+            this.label4.Text = "Choose weather(1 - rain, 2 - storm, 3 - snow) - ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(311, 112);
+            this.label2.Location = new System.Drawing.Point(372, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(332, 13);
+            this.label2.Size = new System.Drawing.Size(271, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Choose whom attack(1 - Mage, 2 - Warrior, 3 - Archer, 4 - Random) - ";
+            this.label2.Text = "Choose whom attack(1 - Mage, 2 - Warrior, 3 - Archer) - ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.BlueViolet;
-            this.label1.Location = new System.Drawing.Point(319, 86);
+            this.label1.Location = new System.Drawing.Point(380, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(324, 13);
+            this.label1.Size = new System.Drawing.Size(263, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Choose who attack(1 - Mage, 2 - Warrior, 3 - Archer, 4 - Random) - ";
+            this.label1.Text = "Choose who attack(1 - Mage, 2 - Warrior, 3 - Archer) - ";
             // 
             // Menu
             // 
