@@ -62,66 +62,66 @@ namespace Myspace
 
         public static void chooseWeatherAndLocation()
         {
-            //if (location == 1)
-            //{
-            //    archer1Attack += 30;
-            //    mage1Attack += 25;
-            //    warrior1Attack -= 20;
+            if (location == 1)
+            {
+                archer1Attack += 30;
+                mage1Attack += 25;
+                warrior1Attack -= 20;
 
-            //    archer2Attack += 30;
-            //    mage2Attack += 25;
-            //    warrior2Attack -= 20;
-            //}
-            //else if (location == 2)
-            //{
-            //    warrior1Attack += 20;
-            //    mage1Attack -= 15;
-            //    archer1Attack -= 18;
+                archer2Attack += 30;
+                mage2Attack += 25;
+                warrior2Attack -= 20;
+            }
+            else if (location == 2)
+            {
+                warrior1Attack += 20;
+                mage1Attack -= 15;
+                archer1Attack -= 18;
 
-            //    warrior2Attack += 20;
-            //    mage2Attack -= 15;
-            //    archer2Attack -= 18;
-            //}
-            //else if (location == 3)
-            //{
-            //    warrior1Attack -= 28;
-            //    mage1Attack += 25;
-            //    archer1Attack += 20;
+                warrior2Attack += 20;
+                mage2Attack -= 15;
+                archer2Attack -= 18;
+            }
+            else if (location == 3)
+            {
+                warrior1Attack -= 28;
+                mage1Attack += 25;
+                archer1Attack += 20;
 
-            //    warrior2Attack -= 28;
-            //    mage2Attack += 25;
-            //    archer2Attack += 20;
-            //}
+                warrior2Attack -= 28;
+                mage2Attack += 25;
+                archer2Attack += 20;
+            }
 
-            //if (weather == 1)
-            //{
-            //    mage1Attack -= 26;
-            //    warrior1Attack -= 27;
-            //    archer1Attack -= 25;
+            if (weather == 1)
+            {
+                mage1Attack -= 26;
+                warrior1Attack -= 27;
+                archer1Attack -= 25;
 
-            //    mage2Attack -= 26;
-            //    warrior2Attack -= 27;
-            //    archer2Attack -= 25;
-            //}
-            //else if (weather == 2)
-            //{
-            //    mage1Attack += 40;
-            //    archer1Attack -= 30;
+                mage2Attack -= 26;
+                warrior2Attack -= 27;
+                archer2Attack -= 25;
+            }
+            else if (weather == 2)
+            {
+                mage1Attack += 40;
+                archer1Attack -= 30;
 
-            //    mage2Attack += 40;
-            //    archer2Attack -= 30;
-            //}
-            //else if (weather == 3)
-            //{
-            //    warrior1Attack -= 25;
-            //    archer1Attack += 30;
-            //    mage1Attack -= 10;
+                mage2Attack += 40;
+                archer2Attack -= 30;
+            }
+            else if (weather == 3)
+            {
+                warrior1Attack -= 25;
+                archer1Attack += 30;
+                mage1Attack -= 10;
 
-            //    warrior2Attack -= 25;
-            //    archer2Attack += 30;
-            //    mage2Attack -= 10;
-            //}
-           
+                warrior2Attack -= 25;
+                archer2Attack += 30;
+                mage2Attack -= 10;
+            }
+
         }
 
         public static string chooseHero()
@@ -165,130 +165,6 @@ namespace Myspace
             
         }
 
- 
-
-        //public static void warriorBattles()
-        //{
-        //    if (choose == 2 && choose2 == 1)
-        //    {
-        //        for (int i = 0; i < 99; i++)
-        //        {
-
-        //            player1Damage = mage1.Attack(warrior1Attack, Attack.Physical);
-        //            
-        //            mage1Health = printHealth(mage1Health, player1Damage);
-        //            if (mageLose(mage1Health)) { break; }
-        //            countinue = Console.ReadLine();
-        //            player2Damage = warrior1.Attack(mage1Attack, Attack.Magical);
-        //            
-        //            warrior1Health = printHealth(warrior1Health, player2Damage);
-        //            if (warriorLose(warrior1Health)) { break; }
-
-        //            
-        //        }
-        //        reset();
-        //    }
-        //    else if (choose == 2 && choose2 == 3)
-        //    {
-        //        for (int i = 0; i < 99; i++)
-        //        {
-
-        //            player1Damage = archer1.Attack(warrior1Attack, Attack.Physical);
-        //            archer1Health = printHealth(archer1Health, player1Damage);
-        //            if (archerLose(archer1Health)) { break; }
-        //            countinue = Console.ReadLine();
-        //            player2Damage = warrior1.Attack(archer1Attack, Attack.Physical);
-        //           
-        //            warrior1Health = printHealth(warrior1Health, player2Damage);
-        //            if (warriorLose(warrior1Health)) { break; }
-
-        //           countinue = Console.ReadLine();
-        //        }
-        //        reset();
-        //    }
-        //    else if (choose == 2 && choose2 == 2)
-        //    {
-        //        for (int i = 0; i < 99; i++)
-        //        {
-
-        //            player1Damage = warrior2.Attack(warrior1Attack, Attack.Physical);
-        //            
-        //            warrior2Health = printHealth(warrior2Health, player1Damage);
-        //            if (warriorLose(warrior1Health)) { break; }
-        //            countinue = Console.ReadLine();
-        //            player2Damage = warrior1.Attack(warrior2Attack, Attack.Physical);
-        //            
-        //            warrior1Health = printHealth(warrior1Health, player2Damage);
-        //            if (warriorLose(warrior1Health)) { break; }
-
-        //           
-        //        }
-        //        reset();
-        //    }
-        //}
-
-        //public static void archerBattles()
-        //{
-        //    if (choose == 3 && choose2 == 1)
-        //    {
-        //        for (int i = 0; i < 99; i++)
-        //        {
-
-        //            player1Damage = mage1.Attack(archer1Attack, Attack.Physical);
-        //           
-        //            mage1Health = printHealth(mage1Health, player1Damage);
-        //            if (mageLose(mage1Health)) { break; }
-        //            countinue = Console.ReadLine();
-        //            player2Damage = archer1.Attack(mage1Attack, Attack.Magical);
-        //           
-        //            archer1Health = printHealth(archer1Health, player2Damage);
-        //            if (archerLose(archer1Health)) { break; }
-
-        //           
-        //        }
-        //        reset();
-        //    }
-
-        //    else if (choose == 3 && choose2 == 2)
-        //    {
-        //        for (int i = 0; i < 99; i++)
-        //        {
-
-        //            player1Damage = warrior1.Attack(archer1Attack, Attack.Physical);
-        //            
-        //            warrior1Health = printHealth(warrior1Health, player1Damage);
-        //            if (warriorLose(warrior1Health)) { break; }
-        //            countinue = Console.ReadLine();
-        //            player2Damage = archer1.Attack(warrior1Attack, Attack.Physical);
-        //            
-        //            archer1Health = printHealth(archer1Health, player2Damage);
-        //            if (archerLose(archer1Health)) { break; }
-
-        //            countinue = Console.ReadLine();
-        //        }
-        //        reset();
-        //    }
-
-        //    else if (choose == 3 && choose2 == 3)
-        //    {
-        //        for (int i = 0; i < 99; i++)
-        //        {
-
-        //            player1Damage = archer2.Attack(archer1Attack, Attack.Physical);
-        //            
-        //            archer2Health = printHealth(archer2Health, player1Damage);
-        //            if (archerLose(archer1Health)) { break; }
-        //            countinue = Console.ReadLine();
-        //            player2Damage = archer1.Attack(archer2Attack, Attack.Physical);
-        //                               archer1Health = printHealth(archer1Health, player2Damage);
-        //            if (archerLose(archer1Health)) { break; }
-
-        //           countinue = Console.ReadLine();
-        //        }
-        //        reset();
-        //    }
-        //}
-
         public static double printHealth(double health, double damage)
         {
             health -= damage;
@@ -310,7 +186,6 @@ namespace Myspace
         }
 
        
-
         public static void reset()
         {
             mage1Health = 720;
@@ -332,9 +207,6 @@ namespace Myspace
             player1Damage = 0;
             player2Damage = 0;
         }
-
-       
-
 
     }
 }

@@ -13,9 +13,11 @@ namespace Myspace
 {
     public partial class Menu : Form
     {
+       
         public Menu()
         {
             InitializeComponent();
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,22 +40,29 @@ namespace Myspace
 
             Program.weather = weather;
 
-
-
+            Program.chooseWeatherAndLocation();
+            
             Form form = new Battle();
-
+           
             form.StartPosition = FormStartPosition.Manual;
             form.Height = this.Height;
             form.Width = this.Width;
             form.Location = this.Location;
             form.Show();
             this.Hide();
+           
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
            
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            return;
         }
     }
 }

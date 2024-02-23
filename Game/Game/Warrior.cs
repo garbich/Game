@@ -4,10 +4,11 @@ namespace Myspace
 {
     internal class Warrior : Hero
     {
-
+        public bool crit = false;
         public Warrior(string Name, double Health, double AttackPower, int ResistanceToPhysical, int ResistanceToMagical) :
             base(Name, Health, AttackPower, ResistanceToPhysical, ResistanceToMagical)
         {
+            crit = false;
         }
 
         public double Attack(double AttackPower, Attack typeAttack)
@@ -15,9 +16,10 @@ namespace Myspace
 
             double totallDamage = AttackPower;
 
-
+            crit = false;
             if (CriticalChance() > 80)
             {
+                crit = true;
                 return 0;
             }
 

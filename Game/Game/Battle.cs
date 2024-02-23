@@ -12,10 +12,12 @@ namespace Myspace
             label2.Visible = false;
             part = true;
             label3.Visible = false;
+            Crit.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Crit.Visible = false;
             label2.Visible = true;
             label2.Text = Program.chooseHero();
 
@@ -38,6 +40,7 @@ namespace Myspace
 
                 Program.player1Damage = Program.warrior1.Attack(Program.mage1Attack, Attack.Magical);
                 Damage.Text = $"Player 1 damage: {Program.player1Damage}";
+                criticalForMage(Program.mage1);
 
                 Program.warrior1Health = Program.printHealth(Program.warrior1Health, Program.player1Damage);
                 Health.Text = $"Player 2 health: {Program.warrior1Health}";
@@ -57,6 +60,7 @@ namespace Myspace
 
                 Program.player1Damage = Program.archer1.Attack(Program.mage1Attack, Attack.Magical);
                 Damage.Text = $"Player 1 damage: {Program.player1Damage}";
+                criticalForMage(Program.mage1);
 
                 Program.archer1Health = Program.printHealth(Program.archer1Health, Program.player1Damage);
                 Health.Text = $"Player 2 health: {Program.archer1Health}";
@@ -75,7 +79,7 @@ namespace Myspace
 
                 Program.player1Damage = Program.mage2.Attack(Program.mage1Attack, Attack.Magical);
                 Damage.Text = $"Player 1 damage: {Program.player1Damage}";
-
+                criticalForMage(Program.mage1);
 
                 Program.mage2Health = Program.printHealth(Program.mage2Health, Program.player1Damage);
                 Health.Text = $"Player 2 health: {Program.mage2Health}";
@@ -88,7 +92,6 @@ namespace Myspace
                 }
             }
         }
-
         private void mageBattlesPart2()
         {
             if (Program.choose == 1 && Program.choose2 == 2)
@@ -97,7 +100,7 @@ namespace Myspace
 
                 Program.player2Damage = Program.mage1.Attack(Program.warrior1Attack, Attack.Physical);
                 Damage.Text = $"Player 2 damage: {Program.player2Damage}";
-
+                criticalForWarrior(Program.warrior1);
 
                 Program.mage1Health = Program.printHealth(Program.mage1Health, Program.player2Damage);
                 Health.Text = $"Player 1 health: {Program.mage1Health}";
@@ -116,7 +119,7 @@ namespace Myspace
 
                 Program.player2Damage = Program.mage1.Attack(Program.archer1Attack, Attack.Physical);
                 Damage.Text = $"Player 2 damage: {Program.player2Damage}";
-
+                criticalForArcher(Program.archer1);
 
                 Program.mage1Health = Program.printHealth(Program.mage1Health, Program.player2Damage);
                 Health.Text = $"Player 1 health: {Program.mage1Health}";
@@ -135,7 +138,7 @@ namespace Myspace
 
                 Program.player2Damage = Program.mage1.Attack(Program.mage2Attack, Attack.Magical);
                 Damage.Text = $"Player 2 damage: {Program.player2Damage}";
-
+                criticalForMage(Program.mage2);
 
                 Program.mage1Health = Program.printHealth(Program.mage1Health, Program.player2Damage);
                 Health.Text = $"Player 1 health: {Program.mage1Health}";
@@ -158,6 +161,7 @@ namespace Myspace
 
                 Program.player1Damage = Program.mage1.Attack(Program.warrior1Attack, Attack.Physical);
                 Damage.Text = $"Player 1 damage: {Program.player1Damage}";
+                criticalForWarrior(Program.warrior1);
 
                 Program.mage1Health = Program.printHealth(Program.mage1Health, Program.player1Damage);
                 Health.Text = $"Player 2 health: {Program.mage1Health}";
@@ -177,6 +181,7 @@ namespace Myspace
 
                 Program.player1Damage = Program.archer1.Attack(Program.warrior1Attack, Attack.Physical);
                 Damage.Text = $"Player 1 damage: {Program.player1Damage}";
+                criticalForWarrior(Program.warrior1);
 
                 Program.archer1Health = Program.printHealth(Program.archer1Health, Program.player1Damage);
                 Health.Text = $"Player 2 health: {Program.archer1Health}";
@@ -195,7 +200,7 @@ namespace Myspace
 
                 Program.player1Damage = Program.warrior2.Attack(Program.warrior1Attack, Attack.Physical);
                 Damage.Text = $"Player 1 damage: {Program.player1Damage}";
-
+                criticalForWarrior(Program.warrior1);
 
                 Program.warrior2Health = Program.printHealth(Program.warrior2Health, Program.player1Damage);
                 Health.Text = $"Player 2 health: {Program.warrior2Health}";
@@ -216,7 +221,7 @@ namespace Myspace
 
                 Program.player2Damage = Program.warrior1.Attack(Program.mage1Attack, Attack.Magical);
                 Damage.Text = $"Player 2 damage: {Program.player2Damage}";
-
+                criticalForMage(Program.mage1);
 
                 Program.warrior1Health = Program.printHealth(Program.warrior1Health, Program.player2Damage);
                 Health.Text = $"Player 1 health: {Program.warrior1Health}";
@@ -235,7 +240,7 @@ namespace Myspace
 
                 Program.player2Damage = Program.warrior1.Attack(Program.archer1Attack, Attack.Physical);
                 Damage.Text = $"Player 2 damage: {Program.player2Damage}";
-
+                criticalForArcher(Program.archer1);
 
                 Program.warrior1Health = Program.printHealth(Program.warrior1Health, Program.player2Damage);
                 Health.Text = $"Player 1 health: {Program.warrior1Health}";
@@ -254,7 +259,7 @@ namespace Myspace
 
                 Program.player2Damage = Program.warrior2.Attack(Program.warrior2Attack, Attack.Physical);
                 Damage.Text = $"Player 2 damage: {Program.player2Damage}";
-
+                criticalForWarrior(Program.warrior2);
 
                 Program.warrior1Health = Program.printHealth(Program.warrior1Health, Program.player2Damage);
                 Health.Text = $"Player 1 health: {Program.warrior1Health}";
@@ -262,6 +267,125 @@ namespace Myspace
                 if (Program.lose(Program.warrior1Health))
                 {
                     MessageBox.Show("Warrior 1 lose");
+                    Program.reset();
+                    return;
+                }
+            }
+        }
+
+        private void archerBattlesPart1()
+        {
+            if (Program.choose == 3 && Program.choose2 == 1)
+            {
+                label3.Visible = true;
+                label3.Text = "Attack archer";
+
+                Program.player1Damage = Program.mage1.Attack(Program.archer1Attack, Attack.Physical);
+                Damage.Text = $"Player 1 damage: {Program.player1Damage}";
+                criticalForArcher(Program.archer1);
+
+                Program.mage1Health = Program.printHealth(Program.mage1Health, Program.player1Damage);
+                Health.Text = $"Player 2 health: {Program.mage1Health}";
+
+                if (Program.lose(Program.mage1Health))
+                {
+                    MessageBox.Show("Mage lose");
+                    Program.reset();
+                    return;
+                }
+            }
+            else if (Program.choose == 3 && Program.choose == 2)
+            {
+                label3.Visible = true;
+                label3.Text = "Attack archer";
+
+                Program.player1Damage = Program.warrior1.Attack(Program.archer1Attack, Attack.Physical);
+                Damage.Text = $"Player 1 damage: {Program.player1Damage}";
+                criticalForArcher(Program.archer1);
+
+                Program.warrior1Health = Program.printHealth(Program.warrior1Health, Program.player1Damage);
+                Health.Text = $"Player 2 health: {Program.warrior1Health}";
+
+
+                if (Program.lose(Program.warrior1Health))
+                {
+                    MessageBox.Show("Warrior lose");
+                    Program.reset();
+                    return;
+                }
+            }
+            else if (Program.choose == 3 && Program.choose2 == 3)
+            {
+                label3.Visible = true;
+                label3.Text = "Attack archer 1";
+
+                Program.player1Damage = Program.archer2.Attack(Program.archer1Attack, Attack.Physical);
+                Damage.Text = $"Player 1 damage: {Program.player1Damage}";
+                criticalForArcher(Program.archer1);
+
+                Program.archer2Health = Program.printHealth(Program.archer2Health, Program.player1Damage);
+                Health.Text = $"Player 2 health: {Program.archer2Health}";
+
+                if (Program.lose(Program.archer2Health))
+                {
+                    MessageBox.Show("Archer 2 lose");
+                    Program.reset();
+                    return;
+                }
+            }
+        }
+        private void archerBattlesPart2()
+        {
+            if (Program.choose == 3 && Program.choose2 == 1)
+            {
+                label3.Text = "Attack mage";
+
+                Program.player2Damage = Program.archer1.Attack(Program.mage1Attack, Attack.Magical);
+                Damage.Text = $"Player 2 damage: {Program.player2Damage}";
+                criticalForMage(Program.mage1);
+
+                Program.archer1Health = Program.printHealth(Program.archer1Health, Program.player2Damage);
+                Health.Text = $"Player 1 health: {Program.archer1Health}";
+
+                if (Program.lose(Program.archer1Health))
+                {
+                    MessageBox.Show("Archer lose");
+                    Program.reset();
+                    return;
+                }
+            }
+            else if (Program.choose == 3 && Program.choose == 2)
+            {
+                label3.Text = "Attack warrior";
+
+                Program.player2Damage = Program.archer1.Attack(Program.warrior1Attack, Attack.Physical);
+                Damage.Text = $"Player 2 damage: {Program.player2Damage}";
+                criticalForWarrior(Program.warrior1);
+
+                Program.archer1Health = Program.printHealth(Program.archer1Health, Program.player2Damage);
+                Health.Text = $"Player 1 health: {Program.archer1Health}";
+
+                if (Program.lose(Program.archer1Health))
+                {
+                    MessageBox.Show("Archer lose");
+                    Program.reset();
+                    return;
+                }
+            }
+            else if (Program.choose == 3 && Program.choose2 == 3)
+            {
+                label3.Text = "Attack archer 2";
+
+                Program.player2Damage = Program.archer1.Attack(Program.archer2Attack, Attack.Physical);
+                Damage.Text = $"Player 2 damage: {Program.player2Damage}";
+                criticalForArcher(Program.archer2);
+
+                Program.archer1Health = Program.printHealth(Program.archer1Health, Program.player2Damage);
+                Health.Text = $"Player 1 health: {Program.archer1Health}";
+
+                if (Program.lose(Program.archer1Health))
+                {
+                    MessageBox.Show("Archer 1 lose");
                     Program.reset();
                     return;
                 }
@@ -296,6 +420,19 @@ namespace Myspace
                     part = true;
                 }
             }
+            else if (Program.choose == 3)
+            {
+                if (part)
+                {
+                    archerBattlesPart1();
+                    part = false;
+                }
+                else if (!part)
+                {
+                    archerBattlesPart2();
+                    part = true;
+                }
+            }
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -310,6 +447,33 @@ namespace Myspace
             form.Location = this.Location;
             form.Show();
             this.Hide();
+        }
+
+        private void criticalForMage(Mage mage)
+        {
+            if (mage.crit)
+            {
+                Crit.Visible = true;
+                Crit.Text = "Attack with critical Damage";
+            }
+        }
+
+        private void criticalForWarrior(Warrior warrior)
+        {
+            if (warrior.crit)
+            {
+                Crit.Visible = true;
+                Crit.Text = "Attack with critical Damage";
+            }
+        }
+
+        private void criticalForArcher(Archer archer)
+        {
+            if (archer.crit)
+            {
+                Crit.Visible = true;
+                Crit.Text = "Attack with critical Damage";
+            }
         }
     }
 }

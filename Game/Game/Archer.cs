@@ -4,9 +4,11 @@ namespace Myspace
 {
     internal class Archer : Hero
     {
+        public bool crit = false;
         public Archer(string Name, double Health, double AttackPower, int ResistanceToPhysical, int ResistanceToMagical) :
             base(Name, Health, AttackPower, ResistanceToPhysical, ResistanceToMagical)
         {
+            crit = false;
         }
 
         public double Attack(double AttackPower, Attack typeAttack)
@@ -18,7 +20,7 @@ namespace Myspace
 
             if (CriticalChance() > 80)
             {
-              
+                crit = true;
                 return 0;
             }
 
