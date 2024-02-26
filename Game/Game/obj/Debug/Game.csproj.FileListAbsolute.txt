@@ -9,3 +9,4 @@ C:\Users\Support\source\repos\Game\Game\obj\Debug\Game.exe
 C:\Users\Support\source\repos\Game\Game\obj\Debug\Game.pdb
 C:\Users\Support\source\repos\Game\Game\obj\Debug\Myspace.Menu.resources
 C:\Users\Support\source\repos\Game\Game\obj\Debug\Myspace.Battle.resources
+C:\Users\Support\source\repos\Game\Game\obj\Debug\Game.Choose.resources

@@ -17,33 +17,32 @@ namespace Myspace
         public Menu()
         {
             InitializeComponent();
-           
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Form formChoose = new Choose("Choose 1 hero", "Mage", "Warrior", "Archer");
+            formChoose.StartPosition = FormStartPosition.CenterScreen;
+            formChoose.ShowDialog();
 
+            Program.choose = Choose.Choice;
 
-            int choose = Int32.Parse(textBox1.Text);
+            formChoose = new Choose("Choose 2 hero", "Mage", "Warrior", "Archer");
+            formChoose.StartPosition = FormStartPosition.CenterScreen;
+            formChoose.ShowDialog();
 
-            Program.choose = choose;
+            Program.choose2 = Choose.Choice;
 
-            int choose2 = Int32.Parse(textBox2.Text);
+            formChoose = new Choose("Choose location", "Field", "City", "Mountain");
+            formChoose.StartPosition = FormStartPosition.CenterScreen;
+            formChoose.ShowDialog();
 
-            Program.choose2 = choose2;
+            Program.location = Choose.Choice;                  
 
-            int location = Int32.Parse(textBox3.Text);
+            Program.chooseLocation();
 
-            Program.location = location;
-
-            int weather = Int32.Parse(textBox4.Text);
-
-            Program.weather = weather;
-
-            Program.chooseWeatherAndLocation();
-            
             Form form = new Battle();
-           
             form.StartPosition = FormStartPosition.Manual;
             form.Height = this.Height;
             form.Width = this.Width;

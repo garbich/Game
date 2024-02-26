@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Myspace
@@ -9,7 +10,19 @@ namespace Myspace
         public Battle()
         {
             InitializeComponent();
-            label2.Visible = false;
+            if (Program.location == 1)
+            {
+                this.BackgroundImage = Image.FromFile("C:\\Users\\Support\\source\\repos\\Game\\Game\\assets\\Field.jpg");
+            }
+            else if (Program.location == 2)
+            {
+                this.BackgroundImage = Image.FromFile("C:\\Users\\Support\\source\\repos\\Game\\Game\\assets\\City.png");
+            }
+            else if (Program.location == 3)
+            {
+                this.BackgroundImage = Image.FromFile("C:\\Users\\Support\\source\\repos\\Game\\Game\\assets\\Mountain.jpg");
+            }
+
             part = true;
             label3.Visible = false;
             Crit.Visible = false;
@@ -18,9 +31,6 @@ namespace Myspace
         private void button1_Click(object sender, EventArgs e)
         {
             Crit.Visible = false;
-            label2.Visible = true;
-            label2.Text = Program.chooseHero();
-
             label1.Text = Program.round.ToString();
 
             chooseBattle();
@@ -40,6 +50,7 @@ namespace Myspace
 
                 Program.player1Damage = Program.warrior1.Attack(Program.mage1Attack, Attack.Magical);
                 Damage.Text = $"Player 1 damage: {Program.player1Damage}";
+
                 criticalForMage(Program.mage1);
 
                 Program.warrior1Health = Program.printHealth(Program.warrior1Health, Program.player1Damage);
@@ -294,7 +305,7 @@ namespace Myspace
                     return;
                 }
             }
-            else if (Program.choose == 3 && Program.choose == 2)
+            else if (Program.choose == 3 && Program.choose2 == 2)
             {
                 label3.Visible = true;
                 label3.Text = "Attack archer";
@@ -354,7 +365,7 @@ namespace Myspace
                     return;
                 }
             }
-            else if (Program.choose == 3 && Program.choose == 2)
+            else if (Program.choose == 3 && Program.choose2 == 2)
             {
                 label3.Text = "Attack warrior";
 

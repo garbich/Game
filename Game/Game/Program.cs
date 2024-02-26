@@ -37,7 +37,7 @@ namespace Myspace
         public static string countinue = "";
         public static int strategy = 1;
 
-        public static int weather = 4;
+        
         public static int location = 4;
 
         public static string start = "y";
@@ -60,7 +60,7 @@ namespace Myspace
             
         }
 
-        public static void chooseWeatherAndLocation()
+        public static void chooseLocation()
         {
             if (location == 1)
             {
@@ -93,34 +93,7 @@ namespace Myspace
                 archer2Attack += 20;
             }
 
-            if (weather == 1)
-            {
-                mage1Attack -= 26;
-                warrior1Attack -= 27;
-                archer1Attack -= 25;
-
-                mage2Attack -= 26;
-                warrior2Attack -= 27;
-                archer2Attack -= 25;
-            }
-            else if (weather == 2)
-            {
-                mage1Attack += 40;
-                archer1Attack -= 30;
-
-                mage2Attack += 40;
-                archer2Attack -= 30;
-            }
-            else if (weather == 3)
-            {
-                warrior1Attack -= 25;
-                archer1Attack += 30;
-                mage1Attack -= 10;
-
-                warrior2Attack -= 25;
-                archer2Attack += 30;
-                mage2Attack -= 10;
-            }
+           
 
         }
 

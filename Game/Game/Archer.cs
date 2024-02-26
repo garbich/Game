@@ -20,32 +20,24 @@ namespace Myspace
 
             if (CriticalChance() > 80)
             {
-                crit = true;
                 return 0;
             }
-
+            crit = false;
+            if (CriticalChance() > 50)
+            {
+                crit = true;
+                totallDamage *= 1.5;
+            }
 
             if (typeAttack == Myspace.Attack.Physical)
             {
-
                 totallDamage -= ResistanceToPhysical;
-                if (CriticalChance() > 50)
-                {
-                    
-                    totallDamage *= 1.5;
-                }
             }
             else
             {
-
                 totallDamage -= ResistanceToMagical;
-                if (CriticalChance() > 50)
-                {
-                  
-                    totallDamage *= 1.5;
-                }
             }
-        
+
 
             return totallDamage;
         }
