@@ -12,7 +12,7 @@ namespace Myspace
             InitializeComponent();
             if (Program.location == 1)
             {
-                this.BackgroundImage = Image.FromFile("C:\\Users\\Support\\source\\repos\\Game\\Game\\assets\\Field.jpg");
+                this.BackgroundImage = Image.FromFile("C:\\Users\\Support\\source\\repos\\Game\\Game\\assets\\Field.jpg");    
             }
             else if (Program.location == 2)
             {
@@ -61,6 +61,7 @@ namespace Myspace
                 {
                     MessageBox.Show("Warrior lose");
                     Program.reset();
+                    backToStart();
                     return;
                 }
             }
@@ -80,6 +81,7 @@ namespace Myspace
                 {
                     MessageBox.Show("Archer lose");
                     Program.reset();
+                    backToStart();
                     return;
                 }
             }
@@ -99,6 +101,7 @@ namespace Myspace
                 {
                     MessageBox.Show("Mage 2 lose");
                     Program.reset();
+                    backToStart();
                     return;
                 }
             }
@@ -121,6 +124,7 @@ namespace Myspace
                 {
                     MessageBox.Show("Mage lose");
                     Program.reset();
+                    backToStart();
                     return;
                 }
             }
@@ -140,6 +144,7 @@ namespace Myspace
                 {
                     MessageBox.Show("Mage lose");
                     Program.reset();
+                    backToStart();
                     return;
                 }
             }
@@ -158,6 +163,7 @@ namespace Myspace
                 {
                     MessageBox.Show("Mage 1 lose");
                     Program.reset();
+                    backToStart();
                     return;
                 }
             }
@@ -182,6 +188,7 @@ namespace Myspace
                 {
                     MessageBox.Show("Mage lose");
                     Program.reset();
+                    backToStart();
                     return;
                 }
             }
@@ -201,6 +208,7 @@ namespace Myspace
                 {
                     MessageBox.Show("Archer lose");
                     Program.reset();
+                    backToStart();
                     return;
                 }
             }
@@ -220,6 +228,7 @@ namespace Myspace
                 {
                     MessageBox.Show("Warrior 2 lose");
                     Program.reset();
+                    backToStart();
                     return;
                 }
             }
@@ -242,6 +251,7 @@ namespace Myspace
                 {
                     MessageBox.Show("Warrior lose");
                     Program.reset();
+                    backToStart();
                     return;
                 }
             }
@@ -261,6 +271,7 @@ namespace Myspace
                 {
                     MessageBox.Show("Warrior lose");
                     Program.reset();
+                    backToStart();
                     return;
                 }
             }
@@ -279,6 +290,7 @@ namespace Myspace
                 {
                     MessageBox.Show("Warrior 1 lose");
                     Program.reset();
+                    backToStart();
                     return;
                 }
             }
@@ -302,6 +314,7 @@ namespace Myspace
                 {
                     MessageBox.Show("Mage lose");
                     Program.reset();
+                    backToStart();
                     return;
                 }
             }
@@ -322,6 +335,7 @@ namespace Myspace
                 {
                     MessageBox.Show("Warrior lose");
                     Program.reset();
+                    backToStart();
                     return;
                 }
             }
@@ -341,6 +355,7 @@ namespace Myspace
                 {
                     MessageBox.Show("Archer 2 lose");
                     Program.reset();
+                    backToStart();
                     return;
                 }
             }
@@ -362,6 +377,7 @@ namespace Myspace
                 {
                     MessageBox.Show("Archer lose");
                     Program.reset();
+                    backToStart();
                     return;
                 }
             }
@@ -380,6 +396,7 @@ namespace Myspace
                 {
                     MessageBox.Show("Archer lose");
                     Program.reset();
+                    backToStart();
                     return;
                 }
             }
@@ -398,6 +415,7 @@ namespace Myspace
                 {
                     MessageBox.Show("Archer 1 lose");
                     Program.reset();
+                    backToStart();
                     return;
                 }
             }
@@ -485,6 +503,17 @@ namespace Myspace
                 Crit.Visible = true;
                 Crit.Text = "Attack with critical Damage";
             }
+        }
+
+        private void backToStart()
+        {
+            Form form = new Menu();
+            form.StartPosition = FormStartPosition.Manual;
+            form.Height = this.Height;
+            form.Width = this.Width;
+            form.Location = this.Location;
+            form.Show();
+            this.Hide();
         }
     }
 }
